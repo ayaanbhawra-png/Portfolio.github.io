@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Ayaan Bhawra · CS Portfolio</title>
-  <!-- Google Fonts & simple CSS reset -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (free icons) -->
+  <title>Ayaan Bhawra | UI/UX Designer & Figma Creator</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -16,581 +15,580 @@
     }
 
     body {
-      background: #f1f5f9;
       font-family: 'Inter', sans-serif;
-      color: #0f172a;
+      background: #F5F7FC;
+      color: #1A2A3F;
       line-height: 1.5;
       scroll-behavior: smooth;
     }
 
+    /* fresh color palette: soft teal + mint accents */
+    :root {
+      --primary: #0F766E;
+      --primary-light: #14B8A6;
+      --primary-soft: #CCFBF1;
+      --accent: #F59E0B;
+      --gray-bg: #F8FAFE;
+      --card-white: #FFFFFF;
+      --text-dark: #1E293B;
+      --text-muted: #475569;
+      --border-light: #E2E8F0;
+    }
+
     .container {
       max-width: 1280px;
-      margin: 2rem auto;
-      padding: 0 2rem;
+      margin: 0 auto;
+      padding: 0 32px;
     }
 
-    /* card style */
-    .card {
-      background: #ffffff;
-      border-radius: 2rem;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
-      transition: all 0.2s ease;
-      overflow: hidden;
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid #E9EEF5;
     }
 
-    /* main grid layout */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: 1fr 2.2fr;
-      gap: 2rem;
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
-    /* left sidebar (profile + contact + soft skills) */
-    .sidebar {
-      background: white;
-      border-radius: 1.8rem;
-      padding: 2rem 1.5rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-      border: 1px solid #eef2ff;
-    }
-
-    .profile-img-section {
-      text-align: center;
+    h2 {
+      font-size: 2.3rem;
       margin-bottom: 2rem;
+      display: inline-block;
+      background: linear-gradient(135deg, #1A2A3F 0%, #0F766E 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      border-left: 5px solid #0F766E;
+      padding-left: 20px;
     }
 
-    .avatar-placeholder {
-      width: 160px;
-      height: 160px;
-      margin: 0 auto 1rem;
-      background: linear-gradient(135deg, #e0e7ff, #cbd5e1);
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: #0F766E;
+      color: white;
+      border: none;
+      box-shadow: 0 4px 12px rgba(15,118,110,0.2);
+    }
+    .btn-primary:hover {
+      background: #0D5F58;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #0F766E;
+      color: #0F766E;
+    }
+    .btn-outline:hover {
+      background: #F0FDFA;
+      transform: translateY(-2px);
+    }
+
+    /* hero section - soft gradient */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #F0FDF9 0%, #F8FAFE 100%);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text { flex: 1; }
+    .hero-badge {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #0F766E;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero-text h1 {
+      font-size: 3.8rem;
+      line-height: 1.2;
+      margin: 0.5rem 0 1rem;
+      color: #0F172A;
+    }
+    .highlight { color: #0F766E; }
+    .hero-sub {
+      font-size: 1.2rem;
+      color: #334155;
+      margin: 1.2rem 0;
+      border-left: 3px solid #0F766E;
+      padding-left: 20px;
+    }
+    .hero-intro {
+      color: #475569;
+      max-width: 550px;
+      margin: 1.5rem 0 2rem;
+      font-size: 1rem;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    .profile-pic {
+      flex: 0.7;
+      min-width: 240px;
+      text-align: center;
+    }
+    .profile-pic img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      background: white;
+      padding: 4px;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.08);
+      border: 1px solid #D1FAE5;
+    }
+
+    /* cards */
+    .card-light {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+      border: 1px solid #E2E8F0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin-top: 24px;
+    }
+    .skill-category {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 24px;
+      border: 1px solid #E2E8F0;
+    }
+    .skill-category h3 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #0F766E;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-tags span {
+      background: #F1F5F9;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1E293B;
+    }
+
+    .exp-item {
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 28px;
+      border-left: 5px solid #0F766E;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      margin-bottom: 24px;
+      border: 1px solid #E9EEF5;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .project-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      border: 1px solid #E2E8F0;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #99F6E4;
+      box-shadow: 0 20px 30px -12px rgba(15,118,110,0.12);
+    }
+    .project-img {
+      height: 180px;
+      background: linear-gradient(135deg, #F0FDFA, #FFFFFF);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      color: #0F766E;
+      border-bottom: 1px solid #E9EEF5;
+    }
+    .project-info {
+      padding: 24px;
+    }
+    .project-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .project-links {
+      display: flex;
+      gap: 14px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .project-links a {
+      background: #F1F5F9;
+      color: #1E293B;
+      text-decoration: none;
+      font-size: 0.8rem;
+      padding: 7px 16px;
+      border-radius: 40px;
+      transition: 0.2s;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .project-links a:hover {
+      background: #0F766E;
+      color: white;
+    }
+    .report-highlight {
+      background: #FEF3C7 !important;
+      color: #B45309 !important;
+      border: 1px solid #FDE68A;
+    }
+    .report-highlight:hover {
+      background: #D97706 !important;
+      color: white !important;
+    }
+    .figma-highlight {
+      background: #E0F2FE !important;
+      color: #0369A1 !important;
+    }
+    .figma-highlight:hover {
+      background: #0284C7 !important;
+      color: white !important;
+    }
+    .gallery-highlight {
+      background: #E0F2FE !important;
+      color: #0369A1 !important;
+    }
+    .gallery-highlight:hover {
+      background: #0284C7 !important;
+      color: white !important;
+    }
+
+    .case-study {
+      background: #FFFFFF;
+      border-radius: 32px;
+      padding: 36px;
+      margin-top: 24px;
+      border: 1px solid #E2E8F0;
+    }
+
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      justify-content: space-between;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .social-links {
+      display: flex;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .social-links a {
+      background: #F1F5F9;
+      width: 44px;
+      height: 44px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      transition: 0.2s;
+      color: #0F766E;
+    }
+    .social-links a:hover {
+      background: #0F766E;
+      color: white;
+      transform: translateY(-3px);
+    }
+    footer {
+      text-align: center;
+      padding: 32px 0;
+      color: #64748B;
+      font-size: 0.85rem;
+      background: #FFFFFF;
+      border-top: 1px solid #E9EEF5;
+    }
+    @media (max-width: 780px) {
+      .hero-text h1 { font-size: 2.5rem; }
+      .container { padding: 0 20px; }
+      section { padding: 55px 0; }
+      h2 { font-size: 1.9rem; }
+    }
+    .floating-social {
+      position: fixed;
+      right: 22px;
+      bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 99;
+    }
+    .floating-social a {
+      background: #FFFFFF;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      border: 4px solid white;
-      box-shadow: 0 12px 22px -8px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s;
-    }
-
-    .avatar-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* fallback icon if image missing */
-    .avatar-icon {
-      font-size: 5rem;
-      color: #334155;
-    }
-
-    .avatar-placeholder:hover {
-      transform: scale(1.02);
-    }
-
-    .image-input-wrapper {
-      margin-top: 0.5rem;
-      font-size: 0.75rem;
-      background: #f8fafc;
-      padding: 0.5rem;
-      border-radius: 2rem;
-      display: inline-block;
-      width: auto;
-      cursor: pointer;
-    }
-
-    .image-input-wrapper label {
-      cursor: pointer;
-      color: #3b82f6;
-      font-weight: 500;
-      display: inline-flex;
-      gap: 0.4rem;
-      align-items: center;
-      font-size: 0.8rem;
-    }
-
-    #profileImgUpload {
-      display: none;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #1e293b, #2563eb);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 0.25rem;
-    }
-
-    .badge-student {
-      display: inline-block;
-      background: #eef2ff;
-      padding: 0.2rem 1rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #1e40af;
-      margin-top: 0.25rem;
-    }
-
-    .contact-info {
-      margin: 1.8rem 0 1.5rem;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      color: #1e293b;
-      word-break: break-word;
-    }
-
-    .contact-item i {
-      width: 28px;
-      color: #2563eb;
-      font-size: 1.1rem;
-    }
-
-    .skill-tag {
-      background: #f1f5f9;
-      padding: 0.3rem 0.9rem;
-      border-radius: 30px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #0f172a;
-      display: inline-block;
-      margin: 0.25rem 0.3rem;
-    }
-
-    .skill-category {
-      margin: 1.5rem 0 0.8rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: -0.2px;
-    }
-
-    .soft-skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    /* right side content */
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .section-card {
-      background: white;
-      border-radius: 1.8rem;
-      padding: 1.8rem 2rem;
-      border: 1px solid #eef2ff;
-      transition: box-shadow 0.2s;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      border-left: 5px solid #3b82f6;
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .section-title i {
-      color: #3b82f6;
       font-size: 1.3rem;
-    }
-
-    .job-entry, .edu-entry {
-      margin-bottom: 1.5rem;
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-items: baseline;
-      margin-bottom: 0.5rem;
-    }
-
-    .job-title {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #0f172a;
-    }
-
-    .job-date {
-      font-size: 0.75rem;
-      background: #eef2ff;
-      padding: 0.2rem 0.7rem;
-      border-radius: 20px;
-      color: #2563eb;
-      font-weight: 500;
-    }
-
-    .company {
-      font-weight: 500;
-      color: #475569;
-      font-size: 0.85rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .job-desc {
-      font-size: 0.9rem;
-      color: #334155;
-      margin-left: 0.2rem;
-      padding-left: 0.5rem;
-      border-left: 2px solid #cbd5e1;
-    }
-
-    .job-desc ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .job-desc li {
-      margin-bottom: 0.5rem;
-      display: flex;
-      gap: 0.6rem;
-      align-items: baseline;
-    }
-
-    .job-desc li i {
-      font-size: 0.7rem;
-      color: #3b82f6;
-      margin-top: 0.2rem;
-      width: 16px;
-    }
-
-    .project-note {
-      background: #f8fafc;
-      border-radius: 1.2rem;
-      padding: 1rem 1.2rem;
-      margin: 1rem 0 0.5rem;
-      font-size: 0.85rem;
-    }
-
-    hr {
-      margin: 1rem 0;
-      border: 0;
-      height: 1px;
-      background: #e2e8f0;
-    }
-
-    .lang-item {
-      display: inline-block;
-      background: #EFF6FF;
-      border-radius: 40px;
-      padding: 0.3rem 1rem;
-      margin-right: 0.6rem;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 2.5rem;
-      font-size: 0.75rem;
-      color: #5b6e8c;
-    }
-
-    @media (max-width: 880px) {
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      .container {
-        padding: 1rem;
-      }
-      .section-card {
-        padding: 1.5rem;
-      }
-    }
-
-    .btn-outline-light {
-      background: none;
-      border: 1px solid #cbd5e1;
-      border-radius: 30px;
-      padding: 0.3rem 0.9rem;
       transition: 0.2s;
+      color: #0F766E;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid #D1FAE5;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+    .floating-social a:hover {
+      background: #0F766E;
+      color: white;
     }
   </style>
 </head>
 <body>
-<div class="container">
-  <div class="portfolio-grid">
-    <!-- LEFT SIDEBAR: profile pic + contact + soft skills + language -->
-    <aside class="sidebar">
-      <div class="profile-img-section">
-        <div class="avatar-placeholder" id="avatarPreview">
-          <!-- default icon: user-circle (will be replaced if image uploaded) -->
-          <i class="fas fa-user-graduate avatar-icon"></i>
-        </div>
-        <div class="image-input-wrapper">
-          <label for="profileImgUpload">
-            <i class="fas fa-camera"></i> Upload photo
-          </label>
-          <input type="file" id="profileImgUpload" accept="image/jpeg,image/png,image/jpg">
-        </div>
-        <h1>Ayaan Bhawra</h1>
-        <div class="badge-student">STUDENT · B.Sc. CS</div>
+
+<div class="floating-social">
+  <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href="#" target="_blank"><i class="fab fa-behance"></i></a>
+  <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">✦ UI/UX DESIGNER & FIGMA CREATOR</div>
+      <h1>Ayaan <span class="highlight">Bhawra</span><br>UI/UX Designer & Figma Creator</h1>
+      <div class="hero-sub">Designing modern, user-focused digital experiences with clean interfaces, creative layouts, and interactive design systems.</div>
+      <div class="hero-intro">Passionate UI/UX designer focused on creating responsive website designs, modern landing pages, and visually engaging digital experiences using Figma and creative design workflows.</div>
+      <div class="btn-group">
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-eye"></i> View My Work</a>
+        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
+        <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Download Resume</a>
       </div>
+    </div>
+    <div class="profile-pic">
+      <img src="https://placehold.co/400x400/F0FDFA/0F766E?text=Ayaan+B." alt="Ayaan Bhawra">
+    </div>
+  </div>
+</section>
 
-      <div class="contact-info">
-        <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>+91 72085 56107</span></div>
-        <div class="contact-item"><i class="fas fa-envelope"></i> <span>ayaanbhawra02@gmail.com</span></div>
-        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>302, Khan Palace, Khoja gally, Versova, Andheri West, Mumbai-61</span></div>
-      </div>
+<!-- About Me -->
+<section>
+  <div class="container">
+    <h2>About Me</h2>
+    <div style="max-width: 800px; font-size: 1rem; color: #334155; line-height: 1.6;">
+      <p>I am a creative UI/UX designer and Computer Science student passionate about designing modern and user-friendly digital experiences. I specialize in creating responsive website layouts, landing pages, and interface systems using Figma and modern UI principles.</p>
+      <p style="margin-top: 1rem;">Along with UI/UX design, I also have experience working with WordPress to transform design concepts into functional and responsive websites. I enjoy combining creativity, design thinking, and AI-assisted workflows to build visually engaging interfaces that improve user experience.</p>
+      <p style="margin-top: 1rem; font-weight: 500;">My goal is to create clean, impactful, and modern digital products that are both visually attractive and easy to use.</p>
+    </div>
+  </div>
+</section>
 
-      <div>
-        <div class="skill-category"><i class="fas fa-code"></i> TECHNICAL SKILLS</div>
-        <div>
-          <span class="skill-tag">C++</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">SQL (Basics)</span>
-          <span class="skill-tag">Flutter</span>
-          <span class="skill-tag">Android Studio</span>
-          <span class="skill-tag">FIGMA</span>
-          <span class="skill-tag">CANVA</span>
-          <span class="skill-tag">Linux</span>
-          <span class="skill-tag">R (basics)</span>
-          <span class="skill-tag">JupyterLite</span>
-          <span class="skill-tag">RStudio</span>
-        </div>
-      </div>
+<!-- Skills -->
+<section>
+  <div class="container">
+    <h2>Skills & Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-category"><h3>🎨 UI/UX Design</h3><div class="skill-tags"><span>Figma</span><span>Wireframing</span><span>Prototyping</span><span>Responsive UI</span><span>Landing Page Design</span><span>Design Systems</span><span>Typography</span><span>Color Theory</span><span>User Flow</span><span>Visual Hierarchy</span></div></div>
+      <div class="skill-category"><h3>🤖 AI & Creative Tools</h3><div class="skill-tags"><span>Canva</span><span>Claude AI</span><span>ChatGPT</span><span>AI-Assisted Workflow</span></div></div>
+      <div class="skill-category"><h3>⚙️ Development</h3><div class="skill-tags"><span>WordPress</span><span>Elementor</span><span>HTML/CSS</span><span>Flutter</span><span>Python</span><span>C++</span><span>SQL</span></div></div>
+      <div class="skill-category"><h3>💡 Soft Skills</h3><div class="skill-tags"><span>Communication</span><span>Teamwork</span><span>Creativity</span><span>Problem Solving</span><span>Adaptability</span></div></div>
+    </div>
+  </div>
+</section>
 
-      <div style="margin-top: 1.8rem;">
-        <div class="skill-category"><i class="fas fa-users"></i> SOFT SKILLS</div>
-        <div class="soft-skill-list">
-          <span class="skill-tag"><i class="far fa-comment-dots"></i> Communication</span>
-          <span class="skill-tag"><i class="fas fa-handshake"></i> Team Work</span>
-          <span class="skill-tag"><i class="fas fa-lightbulb"></i> Problem solving</span>
-          <span class="skill-tag"><i class="fas fa-clock"></i> Time management</span>
-        </div>
-      </div>
+<!-- Experience -->
+<section>
+  <div class="container">
+    <h2>Experience</h2>
+    <div class="exp-item">
+      <h3 style="color:#0F766E;">UI/UX Design Internship</h3>
+      <p style="font-weight:500;">Think Monk – Teach Us Project | 2 Months Internship</p>
+      <ul style="margin-top: 12px; margin-left: 20px; color:#475569;">
+        <li>Assisted in designing and improving UI layouts for Teach Us project</li>
+        <li>Conducted user surveys & feedback to improve usability</li>
+        <li>Participated in planning meetings & design discussions</li>
+        <li>Interface structuring & usability enhancement using modern UI concepts</li>
+        <li>Maintained documentation and workflow records</li>
+      </ul>
+      <div class="skill-tags" style="margin-top: 16px;"><span>Figma</span><span>UI/UX Principles</span><span>User Research</span><span>Team Collaboration</span></div>
+    </div>
+    <div class="exp-item">
+      <h3 style="color:#0F766E;">Figma & Creative Designer</h3>
+      <p style="font-weight:500;">MCM BPO PVT. LTD. | March 2026 – April 2026</p>
+      <ul style="margin-top: 12px; margin-left: 20px; color:#475569;">
+        <li>Created modern UI/UX assets including banners, logos, and brand identity elements using Figma</li>
+        <li>Designed reusable design components and marketing collaterals for digital campaigns</li>
+        <li>Collaborated with marketing team to produce visually engaging social media graphics</li>
+        <li>Used AI tools like Claude AI to speed up creative ideation and design workflows</li>
+      </ul>
+      <div class="skill-tags" style="margin-top: 16px;"><span>Figma</span><span>Logo Design</span><span>Banner Creation</span><span>Brand Identity</span><span>Canva</span></div>
+    </div>
+  </div>
+</section>
 
-      <div style="margin-top: 1.8rem;">
-        <div class="skill-category"><i class="fas fa-language"></i> LANGUAGES</div>
-        <div>
-          <span class="lang-item"><i class="fas fa-comment"></i> English (Conversational)</span>
-          <span class="lang-item"><i class="fas fa-comment"></i> Hindi (Native)</span>
-        </div>
-      </div>
-    </aside>
-
-    <!-- RIGHT MAIN: PROFILE + WORK EX + EDUCATION + PROJECTS -->
-    <div class="main-content">
-      <!-- PROFILE SECTION -->
-      <div class="section-card">
-        <div class="section-title">
-          <i class="fas fa-user-astronaut"></i>
-          <span>Profile</span>
-        </div>
-        <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.5;">
-          B.Sc. Computer Science student with foundational knowledge in C++, Python, SQL, and R, along with exposure to Linux and Data Science tools such as JupyterLite and RStudio. Enthusiastic about software development, databases, and web applications. Seeking internship opportunities to apply technical skills, gain industry experience, and contribute to impactful projects.
-        </p>
-      </div>
-
-      <!-- WORK EXPERIENCE -->
-      <div class="section-card">
-        <div class="section-title">
-          <i class="fas fa-briefcase"></i>
-          <span>Work Experience</span>
-        </div>
-
-        <!-- Think Monk Internship -->
-        <div class="job-entry">
-          <div class="job-header">
-            <div class="job-title">Intern - Think Monk (Teach Us Project)</div>
-            <div class="job-date">30 Hours</div>
-          </div>
-          <div class="company"><i class="fas fa-building"></i> Think Monk · Remote</div>
-          <div class="job-desc">
-            <ul>
-              <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Conducted surveys to gather user requirements and feedback for the Teach Us project.</li>
-              <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Participated in team meetings and discussions to align project goals & workflows.</li>
-              <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Created and maintained comprehensive project documentation.</li>
-              <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Assisted in UI design (focus on usability & clarity) for the application.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- WordPress Developer MCM BPO -->
-        <div class="job-entry">
-          <div class="job-header">
-            <div class="job-title">WordPress Developer</div>
-            <div class="job-date">Mar 2026 – Apr 2026 (2 months)</div>
-          </div>
-          <div class="company"><i class="fas fa-laptop-code"></i> MCM BPO PVT. LTD. · Jogeshwari(W), Mumbai</div>
-          <div class="job-desc">
-            <ul>
-              <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Built and managed WordPress websites, leveraging Claude AI to accelerate content & layout creation.</li>
-              <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Customized themes & plugins to align with project needs and improve user experience.</li>
-              <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Optimized website performance & SEO for speed and visibility.</li>
-              <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Handled updates, content management & basic troubleshooting.</li>
-            </ul>
+<!-- Featured Projects -->
+<section id="projects">
+  <div class="container">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      <!-- 1. Teach Us Placement Portal UI/UX -->
+      <div class="project-card">
+        <div class="project-img"><i class="fas fa-graduation-cap"></i></div>
+        <div class="project-info">
+          <h3>TeachUs – Placement Portal UI/UX</h3>
+          <p>Complete mobile-first placement management system designed in Figma. Role-based dashboards (Admin, Student, Recruiter), job discovery flows, application tracking, policy configuration & offer acceptance workflows.</p>
+          <div class="skill-tags" style="margin: 12px 0;"><span>Figma</span><span>Design System</span><span>Prototyping</span><span>User Flow</span></div>
+          <div class="project-links">
+            <a href="#" class="figma-highlight" target="_blank"><i class="fab fa-figma"></i> Figma Prototype</a>
+            <a href="#" class="report-highlight" target="_blank"><i class="fas fa-file-alt"></i> Project Report</a>
           </div>
         </div>
-
-        <div class="project-note">
-          <i class="fas fa-rocket"></i> <strong>Additional exposure:</strong> Data Science tools (JupyterLite, RStudio), Figma for prototyping, Flutter basics.
-        </div>
       </div>
-
-      <!-- EDUCATION SECTION -->
-      <div class="section-card">
-        <div class="section-title">
-          <i class="fas fa-graduation-cap"></i>
-          <span>Education</span>
-        </div>
-
-        <div class="edu-entry">
-          <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline;">
-            <span class="job-title">Bachelor's in Computer Science</span>
-            <span class="job-date">2024 – 25 · Pursuing 3rd Year</span>
+      
+      <!-- 2. MCM BPO – Branding & Figma Assets (clean: only Design Report + View Full Gallery) -->
+      <div class="project-card">
+        <div class="project-img"><i class="fas fa-palette"></i></div>
+        <div class="project-info">
+          <h3>MCM BPO – Brand Identity & Assets</h3>
+          <p>Designed modern brand collaterals including banners, logos, social media templates, and UI components using Figma. Focused on cohesive visual identity and scalable design system for marketing use.</p>
+          <div class="skill-tags" style="margin: 12px 0;"><span>Logo Design</span><span>Banners</span><span>Brand Identity</span><span>Figma</span></div>
+          
+          <!-- Only two clean buttons: Design Report + View Full Gallery (no image thumbnails) -->
+          <div class="project-links" style="margin-top: 8px;">
+            <a href="#" class="report-highlight" target="_blank"><i class="fas fa-file-alt"></i> Design Report</a>
+            <a href="#" class="gallery-highlight" target="_blank"><i class="fas fa-images"></i> View Full Gallery</a>
           </div>
-          <div class="company">Bhavans College, Andheri West, Mumbai</div>
-          <div style="font-size: 0.85rem; margin-top: 6px;">CGPA: 7.27 (aggregate of 2 years)</div>
-        </div>
-
-        <hr>
-
-        <div class="edu-entry">
-          <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-            <span class="job-title">HSC (12th Class)</span>
-            <span class="job-date">2023 – 24</span>
-          </div>
-          <div class="company">Hansraj Morarji Jr College, Andheri West, Mumbai</div>
-          <div style="font-size: 0.85rem;">Percentage: 71.17% | Marks in CS: 167/200</div>
-        </div>
-
-        <hr>
-
-        <div class="edu-entry">
-          <div style="display: flex; justify-content: space-between;">
-            <span class="job-title">SSC (10th Class)</span>
-            <span class="job-date">2021 – 22</span>
-          </div>
-          <div class="company">Versova Welfare Association High School, Versova, Mumbai</div>
-          <div style="font-size: 0.85rem;">Percentage: 73.00%</div>
-        </div>
-      </div>
-
-      <!-- ADDITIONAL: Tools & Achievements (lightweight) -->
-      <div class="section-card">
-        <div class="section-title">
-          <i class="fas fa-tools"></i>
-          <span>Tools & Platforms</span>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-          <span class="skill-tag"><i class="fab fa-figma"></i> Figma</span>
-          <span class="skill-tag"><i class="fas fa-database"></i> SQLite</span>
-          <span class="skill-tag"><i class="fab fa-android"></i> Android Studio</span>
-          <span class="skill-tag"><i class="fab fa-wordpress"></i> WordPress</span>
-          <span class="skill-tag"><i class="fab fa-python"></i> JupyterLite</span>
-          <span class="skill-tag"><i class="fas fa-chart-line"></i> RStudio</span>
-          <span class="skill-tag"><i class="fab fa-linux"></i> Linux (Ubuntu)</span>
-          <span class="skill-tag"><i class="fas fa-palette"></i> Canva</span>
-        </div>
-        <div style="margin-top: 1rem;">
-          <i class="fas fa-certificate"></i> <strong>Certification mindset:</strong> Passion for continuous learning, agile workflows, design thinking.
         </div>
       </div>
     </div>
   </div>
-  <footer>
-    <i class="far fa-copyright"></i> 2025 Ayaan Bhawra — Built with modern web stack | Open for internships & collaborations
-  </footer>
-</div>
+</section>
+
+<!-- Case Studies (Only TeachUs remains, MCM BPO removed as requested) -->
+<section>
+  <div class="container">
+    <h2>Case Study</h2>
+    <!-- Only TeachUs Case Study - MCM BPO case study removed entirely -->
+    <div class="case-study">
+      <h3 style="font-size: 1.7rem; color:#0F766E;">📘 TeachUs – Placement Management Portal</h3>
+      <p style="margin: 8px 0 16px; color:#475569;">Think Monk Internship | UI/UX Design & Full Prototyping</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; margin: 18px 0;">
+        <div style="flex:1;"><strong>🔍 Problem Statement</strong><br>Traditional placement cells rely on spreadsheets & manual coordination causing inefficiency for students, TPO, and recruiters.</div>
+        <div style="flex:1;"><strong>👥 User Research</strong><br>Analyzed placement mechanisms across colleges; identified pain points of 500+ students, TPO dashboard needs, recruiter tracking.</div>
+      </div>
+      <div><strong>📐 Design Process</strong> – Mobile-first strategy, converted desktop tables into card-based lists, role-based dashboards, bottom navigation, and built a design system of 40+ screens in Figma.</div>
+      <div style="margin: 16px 0;"><strong>🎨 UI Highlights</strong> – Policy configuration screen (offer limits), application status badges, offer acceptance modals, real-time application tracking.</div>
+      <div><strong>✅ Final Solution</strong> – Fully clickable prototype demonstrating end-to-end journey: student job discovery → apply → recruiter shortlisting → TPO analytics.</div>
+      <div class="project-links" style="margin-top: 28px;">
+        <a href="#" class="figma-highlight" target="_blank"><i class="fab fa-figma"></i> Interactive Figma Prototype</a>
+        <a href="#" class="report-highlight" target="_blank"><i class="fas fa-file-alt"></i> View Project Report</a>
+      </div>
+      <p style="margin-top: 20px; font-size: 0.85rem;">⭐ Tools: Figma, User Surveys, Claude AI, Design System, Prototyping.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Hire Me -->
+<section>
+  <div class="container">
+    <h2>Why Hire Me?</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 28px; margin-top: 28px;">
+      <div class="card-light" style="text-align: center;"><i class="fas fa-layer-group" style="font-size: 2rem; color:#0F766E;"></i><h3 style="margin:12px 0">Figma Expert</h3><p>Components, variants, auto-layout, design systems</p></div>
+      <div class="card-light" style="text-align: center;"><i class="fas fa-mobile-alt" style="font-size: 2rem; color:#0F766E;"></i><h3 style="margin:12px 0">Responsive UI</h3><p>Mobile-first & cross-device perfect experiences</p></div>
+      <div class="card-light" style="text-align: center;"><i class="fas fa-paintbrush" style="font-size: 2rem; color:#0F766E;"></i><h3 style="margin:12px 0">Brand & Assets</h3><p>Logo, banners, creative collateral design</p></div>
+      <div class="card-light" style="text-align: center;"><i class="fas fa-lightbulb" style="font-size: 2rem; color:#0F766E;"></i><h3 style="margin:12px 0">AI-Enhanced</h3><p>Fast prototyping & creative workflows</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section>
+  <div class="container">
+    <h2>Education</h2>
+    <div class="exp-item"><h3>🎓 Bachelor's in Computer Science</h3><p>Bhavans College, Andheri West, Mumbai | CGPA 7.27 (Pursuing 3rd Year)</p></div>
+    <div class="exp-item"><h3>📖 HSC (12th)</h3><p>Hansraj Morarji Jr College | Percentage: 71.17%</p></div>
+    <div class="exp-item"><h3>🏫 SSC (10th)</h3><p>Versova Welfare Association High School | Percentage: 73%</p></div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <h2>Let's Connect</h2>
+    <div class="contact-flex">
+      <div class="contact-info">
+        <div class="contact-detail"><i class="fas fa-envelope" style="font-size: 1.6rem; color:#0F766E;"></i> <span>ayaanbhawra02@gmail.com</span></div>
+        <div class="contact-detail"><i class="fas fa-phone-alt" style="font-size: 1.6rem; color:#0F766E;"></i> <span>+91 72085 56107</span></div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-behance"></i></a>
+          <a href="#"><i class="fab fa-dribbble"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div style="flex:1; background:#F8FAFE; padding: 32px; border-radius: 32px; border:1px solid #E2E8F0;">
+        <p style="font-size: 1.4rem; font-weight: 600; color:#0F172A;">✨ Let's create visually impactful and user-friendly digital experiences together.</p>
+        <p style="margin-top: 18px; color:#334155;">Open for freelance, collaboration, or full-time opportunities. Let's bring your ideas to life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Ayaan Bhawra — UI/UX Designer & Figma Creator. All rights reserved.</div>
+</footer>
 
 <script>
-  // image upload and preview functionality (persists only during session, perfect for github demo)
-  const fileInput = document.getElementById('profileImgUpload');
-  const avatarPreviewDiv = document.getElementById('avatarPreview');
-
-  // function to set image from File
-  function setImageFromFile(file) {
-    if (file && file.type.startsWith('image/')) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        // clear previous content (remove icon or img)
-        avatarPreviewDiv.innerHTML = '';
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        img.alt = 'Ayaan profile';
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'cover';
-        avatarPreviewDiv.appendChild(img);
-      };
-      reader.readAsDataURL(file);
-    } else if (file) {
-      alert('Please upload a valid image (jpg, png)');
-    }
-  }
-
-  fileInput.addEventListener('change', (event) => {
-    const selectedFile = event.target.files[0];
-    if (selectedFile) {
-      setImageFromFile(selectedFile);
-      // store to localStorage optionally (makes it persistent across reload)
-      const readerForStorage = new FileReader();
-      readerForStorage.onload = () => {
-        localStorage.setItem('profileImageData', readerForStorage.result);
-      };
-      readerForStorage.readAsDataURL(selectedFile);
-    }
-  });
-
-  // Load saved image from localStorage when page loads
-  window.addEventListener('DOMContentLoaded', () => {
-    const savedImage = localStorage.getItem('profileImageData');
-    if (savedImage) {
-      avatarPreviewDiv.innerHTML = '';
-      const img = document.createElement('img');
-      img.src = savedImage;
-      img.style.width = '100%';
-      img.style.height = '100%';
-      img.style.objectFit = 'cover';
-      avatarPreviewDiv.appendChild(img);
-    } else {
-      // keep default icon but ensure it's visible
-      if (avatarPreviewDiv.children.length === 0) {
-        avatarPreviewDiv.innerHTML = '<i class="fas fa-user-graduate avatar-icon"></i>';
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href === "#" || href === "") return;
+      const target = document.querySelector(href);
+      if(target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
       }
-    }
+    });
   });
-
-  // optional: ensure fallback if user clicks remove? not needed, but robust
-  // also handle if default icon may disappear after resize? no issues.
-  function ensureDefaultIcon() {
-    if (avatarPreviewDiv.children.length === 0 || (avatarPreviewDiv.children[0] && avatarPreviewDiv.children[0].tagName !== 'IMG')) {
-      if (!avatarPreviewDiv.querySelector('img')) {
-        avatarPreviewDiv.innerHTML = '<i class="fas fa-user-graduate avatar-icon"></i>';
-      }
-    }
-  }
-  // call after any potential conflict
-  window.addEventListener('load', ensureDefaultIcon);
 </script>
 </body>
 </html>
