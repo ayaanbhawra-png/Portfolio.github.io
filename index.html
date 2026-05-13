@@ -113,7 +113,10 @@
       justify-content: space-between;
     }
 
-    .hero-text { flex: 1; }
+    .hero-text { 
+      flex: 1; 
+      min-width: 280px;
+    }
     .hero-badge {
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -151,6 +154,9 @@
       flex: 0.7;
       min-width: 240px;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .profile-pic img {
       width: 260px;
@@ -225,6 +231,9 @@
       overflow: hidden;
       transition: all 0.25s ease;
       border: 1px solid #E2E8F0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
     .project-card:hover {
       transform: translateY(-5px);
@@ -243,6 +252,9 @@
     }
     .project-info {
       padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
     .project-info h3 {
       font-size: 1.5rem;
@@ -253,6 +265,7 @@
       gap: 14px;
       margin-top: 20px;
       flex-wrap: wrap;
+      margin-top: auto;
     }
     .project-links a {
       background: #F1F5F9;
@@ -311,6 +324,10 @@
       gap: 48px;
       justify-content: space-between;
     }
+    .contact-info {
+      flex: 1;
+      min-width: 250px;
+    }
     .contact-detail {
       display: flex;
       align-items: center;
@@ -321,6 +338,7 @@
       display: flex;
       gap: 18px;
       margin-top: 28px;
+      flex-wrap: wrap;
     }
     .social-links a {
       background: #F1F5F9;
@@ -333,11 +351,20 @@
       font-size: 1.4rem;
       transition: 0.2s;
       color: #0F766E;
+      text-decoration: none;
     }
     .social-links a:hover {
       background: #0F766E;
       color: white;
       transform: translateY(-3px);
+    }
+    .contact-card {
+      flex: 1;
+      min-width: 280px;
+      background: #F8FAFE;
+      padding: 32px;
+      border-radius: 32px;
+      border: 1px solid #E2E8F0;
     }
     footer {
       text-align: center;
@@ -352,6 +379,26 @@
       .container { padding: 0 20px; }
       section { padding: 55px 0; }
       h2 { font-size: 1.9rem; }
+      .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-text {
+        text-align: center;
+      }
+      .hero-sub {
+        text-align: left;
+      }
+      .hero-intro {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .contact-flex {
+        flex-direction: column;
+      }
     }
     .floating-social {
       position: fixed;
@@ -375,10 +422,30 @@
       color: #0F766E;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       border: 1px solid #D1FAE5;
+      text-decoration: none;
     }
     .floating-social a:hover {
       background: #0F766E;
       color: white;
+    }
+    /* Fix for missing closing div and alignment in case study */
+    .case-study .project-links {
+      margin-top: 28px;
+    }
+    .why-hire-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 28px;
+      margin-top: 28px;
+    }
+    .education-item {
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 28px;
+      border-left: 5px solid #0F766E;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      margin-bottom: 24px;
+      border: 1px solid #E9EEF5;
     }
   </style>
 </head>
@@ -401,7 +468,8 @@
       <div class="btn-group">
         <a href="#projects" class="btn btn-primary"><i class="fas fa-eye"></i> View My Work</a>
         <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
-<a href="https://drive.google.com/uc?export=download&id=1m05Y7_620HXgfDfo9VT6tlc8d6TGoiVW" class="btn btn-outline" target="_blank"><i class="fas fa-download"></i> Download Resume</a>      </div>
+        <a href="https://drive.google.com/uc?export=download&id=1m05Y7_620HXgfDfo9VT6tlc8d6TGoiVW" class="btn btn-outline" target="_blank"><i class="fas fa-download"></i> Download Resume</a>
+      </div>
     </div>
     <div class="profile-pic">
       <img src="ayaanpngpic.jpeg" alt="Ayaan Bhawra">
@@ -478,20 +546,21 @@
           <div class="skill-tags" style="margin: 12px 0;"><span>Figma</span><span>Design System</span><span>Prototyping</span><span>User Flow</span></div>
           <div class="project-links">
             <a href="https://www.figma.com/proto/Kf4HrBTMB9o9BI54powUBf/PlacementUI?node-id=0-1&t=20jbNffBPbn4SucP-1" class="figma-highlight" target="_blank"><i class="fab fa-figma"></i> Figma Prototype</a>
-<a href="https://drive.google.com/file/d/1t0RqRM2FLXDcs2VtXMENLpjSmWMBtxzO/preview" class="report-highlight" target="_blank"><i class="fas fa-file-alt"></i> Project Report</a>        </div>
+            <a href="https://drive.google.com/file/d/1t0RqRM2FLXDcs2VtXMENLpjSmWMBtxzO/preview" class="report-highlight" target="_blank"><i class="fas fa-file-alt"></i> Project Report</a>
+          </div>
+        </div>
       </div>
       
-      <!-- 2. MCM BPO – Branding & Figma Assets (clean: only Design Report + View Full Gallery) -->
+      <!-- 2. MCM BPO – Branding & Figma Assets -->
       <div class="project-card">
         <div class="project-img"><i class="fas fa-palette"></i></div>
         <div class="project-info">
           <h3>MCM BPO – Brand Identity & Assets</h3>
           <p>Designed modern brand collaterals including banners, logos, social media templates, and UI components using Figma. Focused on cohesive visual identity and scalable design system for marketing use.</p>
           <div class="skill-tags" style="margin: 12px 0;"><span>Logo Design</span><span>Banners</span><span>Brand Identity</span><span>Figma</span></div>
-          
-          <!-- Only two clean buttons: Design Report + View Full Gallery (no image thumbnails) -->
-          <div class="project-links" style="margin-top: 8px;">
-<a href="https://drive.google.com/file/d/18dK84RTMZgpS1k42eoH_mT-y6qfyuvdi/preview" class="report-highlight" target="_blank"><i class="fas fa-file-alt"></i> Design Report</a>            <a href="gallery.html" class="gallery-highlight" target="_blank"><i class="fas fa-images"></i> View Full Gallery</a>
+          <div class="project-links">
+            <a href="https://drive.google.com/file/d/18dK84RTMZgpS1k42eoH_mT-y6qfyuvdi/preview" class="report-highlight" target="_blank"><i class="fas fa-file-alt"></i> Design Report</a>
+            <a href="gallery.html" class="gallery-highlight" target="_blank"><i class="fas fa-images"></i> View Full Gallery</a>
           </div>
         </div>
       </div>
@@ -499,11 +568,10 @@
   </div>
 </section>
 
-<!-- Case Studies (Only TeachUs remains, MCM BPO removed as requested) -->
+<!-- Case Studies (Only TeachUs remains) -->
 <section>
   <div class="container">
     <h2>Case Study</h2>
-    <!-- Only TeachUs Case Study - MCM BPO case study removed entirely -->
     <div class="case-study">
       <h3 style="font-size: 1.7rem; color:#0F766E;">📘 TeachUs – Placement Management Portal</h3>
       <p style="margin: 8px 0 16px; color:#475569;">Think Monk Internship | UI/UX Design & Full Prototyping</p>
@@ -516,7 +584,9 @@
       <div><strong>✅ Final Solution</strong> – Fully clickable prototype demonstrating end-to-end journey: student job discovery → apply → recruiter shortlisting → TPO analytics.</div>
       <div class="project-links" style="margin-top: 28px;">
         <a href="https://www.figma.com/proto/Kf4HrBTMB9o9BI54powUBf/PlacementUI?node-id=0-1&t=20jbNffBPbn4SucP-1" class="figma-highlight" target="_blank"><i class="fab fa-figma"></i> Interactive Figma Prototype</a>
-<a href="https://drive.google.com/file/d/1t0RqRM2FLXDcs2VtXMENLpjSmWMBtxzO/preview" class="report-highlight" target="_blank"><i class="fas fa-file-alt"></i> View Project Report</a>      <p style="margin-top: 20px; font-size: 0.85rem;">⭐ Tools: Figma, User Surveys, Claude AI, Design System, Prototyping.</p>
+        <a href="https://drive.google.com/file/d/1t0RqRM2FLXDcs2VtXMENLpjSmWMBtxzO/preview" class="report-highlight" target="_blank"><i class="fas fa-file-alt"></i> View Project Report</a>
+      </div>
+      <p style="margin-top: 20px; font-size: 0.85rem;">⭐ Tools: Figma, User Surveys, Claude AI, Design System, Prototyping.</p>
     </div>
   </div>
 </section>
@@ -525,7 +595,7 @@
 <section>
   <div class="container">
     <h2>Why Hire Me?</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 28px; margin-top: 28px;">
+    <div class="why-hire-grid">
       <div class="card-light" style="text-align: center;"><i class="fas fa-layer-group" style="font-size: 2rem; color:#0F766E;"></i><h3 style="margin:12px 0">Figma Expert</h3><p>Components, variants, auto-layout, design systems</p></div>
       <div class="card-light" style="text-align: center;"><i class="fas fa-mobile-alt" style="font-size: 2rem; color:#0F766E;"></i><h3 style="margin:12px 0">Responsive UI</h3><p>Mobile-first & cross-device perfect experiences</p></div>
       <div class="card-light" style="text-align: center;"><i class="fas fa-paintbrush" style="font-size: 2rem; color:#0F766E;"></i><h3 style="margin:12px 0">Brand & Assets</h3><p>Logo, banners, creative collateral design</p></div>
@@ -538,9 +608,9 @@
 <section>
   <div class="container">
     <h2>Education</h2>
-    <div class="exp-item"><h3>🎓 Bachelor's in Computer Science</h3><p>Bhavans College, Andheri West, Mumbai | CGPA 7.27 (Pursuing 3rd Year)</p></div>
-    <div class="exp-item"><h3>📖 HSC (12th)</h3><p>Hansraj Morarji Jr College | Percentage: 71.17%</p></div>
-    <div class="exp-item"><h3>🏫 SSC (10th)</h3><p>Versova Welfare Association High School | Percentage: 73%</p></div>
+    <div class="education-item"><h3>🎓 Bachelor's in Computer Science</h3><p>Bhavans College, Andheri West, Mumbai | CGPA 7.27 (Pursuing 3rd Year)</p></div>
+    <div class="education-item"><h3>📖 HSC (12th)</h3><p>Hansraj Morarji Jr College | Percentage: 71.17%</p></div>
+    <div class="education-item"><h3>🏫 SSC (10th)</h3><p>Versova Welfare Association High School | Percentage: 73%</p></div>
   </div>
 </section>
 
@@ -559,7 +629,7 @@
           <a href="#"><i class="fab fa-github"></i></a>
         </div>
       </div>
-      <div style="flex:1; background:#F8FAFE; padding: 32px; border-radius: 32px; border:1px solid #E2E8F0;">
+      <div class="contact-card">
         <p style="font-size: 1.4rem; font-weight: 600; color:#0F172A;">✨ Let's create visually impactful and user-friendly digital experiences together.</p>
         <p style="margin-top: 18px; color:#334155;">Open for freelance, collaboration, or full-time opportunities. Let's bring your ideas to life.</p>
       </div>
